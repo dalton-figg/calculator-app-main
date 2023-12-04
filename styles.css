@@ -7,4 +7,56 @@
   color: hsl(228, 45%, 44%);
 }
 
+/* Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  font-family: "League Spartan", "Arial", system-ui, sans-serif;
+}
+
+img {
+  display: block;
+  font-style: italic;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Utilities */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Calculator Styles */
+
+.calculator {
+  max-width: 540px;
+  margin: 0 auto;
+}
