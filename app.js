@@ -4,6 +4,10 @@ const keys = document.querySelectorAll(".calculator__key");
 
 const operators = ["add", "sub", "multiply", "div"];
 
+// can be changed for higher or lower accuracy
+
+const decimalAccuray = 3;
+
 keys.forEach(function (key) {
   // adds a click event listener to every key
   key.addEventListener("click", function () {
@@ -26,6 +30,8 @@ function executeAction(key, action) {
   // blanks out the screens innerHTML
   if (action == "reset") {
     screen.innerHTML = "";
+    calculator.dataset.prev = "";
+    calculator.dataset.operator = "";
   }
 
   // if the action is an operator, save the 'previous number' and clear the screen
@@ -47,5 +53,9 @@ function executeAction(key, action) {
   }
 }
 
+// evaluates the expression, rounds it to 3 decimal places and removes any trailing zeros from the result
+
 calculate = (prevOperand, operator, currentOperand) =>
-  (screen.innerHTML = eval(prevOperand + operator + currentOperand));
+  (screen.innerHTML = parseFloat(
+    eval(prevOperand + operator + currentOperand).toFixed(decimalAccuray)
+  ));
