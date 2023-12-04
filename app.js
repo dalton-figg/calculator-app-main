@@ -1,5 +1,8 @@
-const keys = document.querySelectorAll(".calculator__key");
+const calculator = document.getElementById("calculator");
 const screen = document.getElementById("calculator-screen");
+const keys = document.querySelectorAll(".calculator__key");
+
+const operators = ["add", "sub", "multiply", "div"];
 
 keys.forEach(function (key) {
   // adds a click event listener to every key
@@ -24,4 +27,25 @@ function executeAction(key, action) {
   if (action == "reset") {
     screen.innerHTML = "";
   }
+
+  // if the action is an operator, save the 'previous number' and clear the screen
+
+  if (operators.includes(action)) {
+    calculator.dataset.prev = screen.innerHTML;
+    calculator.dataset.operator = key.innerHTML;
+    screen.innerHTML = "";
+  }
+
+  // grabs all the needed values and passes them out to be evaluated
+
+  if (action == "calculate") {
+    calculate(
+      calculator.dataset.prev,
+      calculator.dataset.operator,
+      screen.innerHTML
+    );
+  }
 }
+
+calculate = (prevOperand, operator, currentOperand) =>
+  (screen.innerHTML = eval(prevOperand + operator + currentOperand));
