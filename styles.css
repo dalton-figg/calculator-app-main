@@ -27,6 +27,9 @@ html {
 }
 
 body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
   background: var(--clr-primary-300);
   color: white;
 }
