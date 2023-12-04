@@ -22,6 +22,12 @@ function executeAction(key, action) {
     screen.innerHTML += key.innerHTML;
   }
 
+  // removes last character from the string
+
+  if (action == "del") {
+    screen.innerHTML = screen.innerHTML.slice(0, -1);
+  }
+
   // only adds a decimal to the screen if there is not already one
   if (action == "decimal" && !screen.innerHTML.includes(".")) {
     screen.innerHTML += key.innerHTML;

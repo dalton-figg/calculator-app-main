@@ -29,14 +29,30 @@
           <div class="calculator__header">
             <h1>calc</h1>
             <form>
-              <fieldset>
+              <fieldset class="calculator__themes">
                 <legend class="sr-only">Pick your theme</legend>
-                <label for="theme-1" class="sr-only">Theme 1</label>
-                <input type="radio" name="theme" id="theme-1" />
-                <label for="theme-2" class="sr-only">Theme 2</label>
-                <input type="radio" name="theme" id="theme-2" />
-                <label for="theme-3" class="sr-only">Theme 3</label>
-                <input type="radio" name="theme" id="theme-3" />
+                <label for="theme-1" class="sr-only">1</label>
+                <input
+                  type="radio"
+                  name="theme"
+                  id="theme-1"
+                  checked
+                  class="calculator__theme"
+                />
+                <label for="theme-2" class="sr-only">2</label>
+                <input
+                  type="radio"
+                  name="theme"
+                  id="theme-2"
+                  class="calculator__theme"
+                />
+                <label for="theme-3" class="sr-only">3</label>
+                <input
+                  type="radio"
+                  name="theme"
+                  id="theme-3"
+                  class="calculator__theme"
+                />
               </fieldset>
             </form>
           </div>
@@ -45,7 +61,12 @@
             <button class="calculator__key">7</button>
             <button class="calculator__key">8</button>
             <button class="calculator__key">9</button>
-            <button class="calculator__key calculator__key--blue" data-action="del">DEL</button>
+            <button
+              class="calculator__key calculator__key--blue"
+              data-action="del"
+            >
+              DEL
+            </button>
             <button class="calculator__key">4</button>
             <button class="calculator__key">5</button>
             <button class="calculator__key">6</button>
@@ -57,14 +78,17 @@
             <button class="calculator__key" data-action="decimal">.</button>
             <button class="calculator__key">0</button>
             <button class="calculator__key" data-action="div">/</button>
-            <button class="calculator__key" data-action="multiply">x</button>
+            <!-- TODO: needs to be fixed -->
+            <button class="calculator__key" data-action="multiply">*</button>
             <button
-              class="calculator__key calculator__key--2x calculator__key--blue" data-action="reset"
+              class="calculator__key calculator__key--2x calculator__key--blue"
+              data-action="reset"
             >
               RESET
             </button>
             <button
-              class="calculator__key calculator__key--2x calculator__key--red" data-action="calculate"
+              class="calculator__key calculator__key--2x calculator__key--red"
+              data-action="calculate"
             >
               =
             </button>

@@ -11,7 +11,7 @@
   --clr-accent-800: hsl(28, 16%, 65%); /* Regular key shadow */
   --clr-accent-900: hsl(30, 25%, 89%); /* Regular key background */
   --clr-accent-red: hsl(6, 63%, 50%); /* Red key background, toggle */
-  --clr-accent-red-darker: hsl(6, 70%, 34%); /*R ed key shadow */
+  --clr-accent-red-darker: hsl(6, 70%, 34%); /*Red key shadow */
 }
 
 * {
@@ -81,6 +81,16 @@ fieldset {
   gap: 24px;
   max-width: 540px;
   margin: 0 auto;
+}
+
+.calculator__themes {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  width: 75px;
+  background: var(--clr-primary-200);
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 
 .calculator__header {
