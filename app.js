@@ -11,6 +11,11 @@ const operators = {
   div: "/",
 };
 
+const special = {
+  π: "3.14159265359",
+  e: "2.71828182846",
+};
+
 // can be changed for higher or lower accuracy
 
 const decimalAccuray = 3;
@@ -51,6 +56,11 @@ function executeAction(key, action) {
 
   if (action in operators) {
     calculator.dataset.prev = screen.innerHTML;
+
+    if (screen.innerHTML in special) {
+      calculator.dataset.prev = special[screen.innerHTML];
+    }
+
     calculator.dataset.operator = operators[action];
     screen.innerHTML = "";
   }
@@ -58,11 +68,50 @@ function executeAction(key, action) {
   // grabs all the needed values and passes them out to be evaluated
 
   if (action == "calculate") {
+    currentOperand = screen.innerHTML;
+
+    // ensure that any values with pi or e are parsed correctly
+
+    if (currentOperand.includes("π")) {
+      currentOperand = currentOperand.replace("π", "*3.14159265359");
+    }
+
+    if (calculator.dataset.prev.includes("π")) {
+      calculator.dataset.prev = calculator.dataset.prev.replace(
+        "π",
+        "*3.14159265359"
+      );
+    }
+
+    if (currentOperand.includes("e")) {
+      currentOperand = currentOperand.replace("e", "*2.71828182846");
+    }
+
+    if (calculator.dataset.prev.includes("e")) {
+      calculator.dataset.prev = calculator.dataset.prev.replace(
+        "e",
+        "*2.71828182846"
+      );
+    }
+
+    // ensure nothing breaks when there isn't a number before any special chars
+
+    if (currentOperand == "*2.71828182846") {
+      currentOperand = "2.71828182846";
+    }
+
+    if (currentOperand == "*3.14159265359") {
+      currentOperand = "3.14159265359";
+    }
+
     calculate(
       calculator.dataset.prev,
       calculator.dataset.operator,
-      screen.innerHTML
+      currentOperand
     );
+
+    calculator.dataset.prev = "";
+    calculator.dataset.operator = "";
   }
 }
 

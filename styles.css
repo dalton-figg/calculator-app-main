@@ -141,7 +141,6 @@ fieldset {
 
 .calculator {
   gap: 1.5rem;
-  max-width: 327px;
 }
 
 .calculator__themes p {
@@ -194,7 +193,7 @@ fieldset {
   gap: 0.8125rem;
   padding: 1.5rem;
   grid-template-columns: repeat(4, 60px);
-  height: 420px;
+  /* height: 420px; */
   border-radius: 1rem;
   background: var(--clr-keypad-bg);
 }
@@ -237,9 +236,6 @@ fieldset {
 }
 
 @media only screen and (min-width: 640px) {
-  .calculator {
-    max-width: 540px;
-  }
   .calculator__screen {
     height: 128px;
     padding: 2rem;
@@ -249,7 +245,7 @@ fieldset {
     grid-template-columns: repeat(4, 100px);
     gap: 1.5rem;
     padding: 2rem;
-    height: 480px;
+    /* height: 480px; */
   }
   .calculator__key {
     max-width: 100px;
