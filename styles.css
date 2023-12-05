@@ -79,7 +79,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 540px;
+  max-width: 327px;
   margin: 0 auto;
 }
 
@@ -87,6 +87,10 @@ fieldset {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 0.5rem;
+}
+
+.calculator__theme-labels > label:hover {
+  cursor: pointer;
 }
 
 .calculator__theme-options {
@@ -124,35 +128,67 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 128px;
-  padding: 2rem;
-  font-size: 56px;
+  height: 88px;
+  padding: 24px;
+  font-size: 40px;
   border-radius: 1rem;
   background: var(--clr-primary-100);
 }
 
 .calculator__keys {
   display: grid;
-  gap: 24px;
-  padding: 2rem;
-  grid-template-columns: repeat(4, 100px);
-  height: 480px;
+  gap: 13px;
+  padding: 24px;
+  grid-template-columns: repeat(4, 60px);
+  height: 420px;
   border-radius: 1rem;
   background: var(--clr-primary-200);
+}
+
+@media only screen and (min-width: 640px) {
+  .calculator {
+    max-width: 540px;
+  }
+  .calculator__screen {
+    height: 128px;
+    padding: 2rem;
+    font-size: 56px;
+  }
+  .calculator__keys {
+    grid-template-columns: repeat(4, 100px);
+
+    gap: 24px;
+    padding: 2rem;
+    height: 480px;
+  }
+  .calculator__key {
+    border-radius: 1rem;
+  }
 }
 
 .calculator__key {
   appearance: none;
   border: none;
-  max-width: 100px;
+  max-width: 60px;
   font-size: 2rem;
   box-shadow: inset 0px -4px 0px var(--clr-accent-800);
   background: var(--clr-accent-900);
   color: var(--clr-accent-500);
   width: 100%;
   font-weight: 700;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+
   height: 64px;
+}
+
+@media only screen and (min-width: 640px) {
+  .calculator__key {
+    max-width: 100px;
+  }
+}
+
+.calculator__key:hover {
+  cursor: pointer;
 }
 
 .calculator__key--2x {
@@ -165,6 +201,7 @@ fieldset {
   background: var(--clr-accent-700);
   color: white;
   font-size: 1.5rem;
+  font-size: 20px;
 }
 
 .calculator__key--red {
@@ -172,4 +209,5 @@ fieldset {
   background: var(--clr-accent-red);
   color: white;
   font-size: 1.5rem;
+  font-size: 20px;
 }
