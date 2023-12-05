@@ -2,7 +2,14 @@ const calculator = document.getElementById("calculator");
 const screen = document.getElementById("calculator-screen");
 const keys = document.querySelectorAll(".calculator__key");
 
-const operators = ["add", "sub", "multiply", "div"];
+// using an object as alternative to array so that the actual HTML of the buttons doesn't have to correspond to the JavaScript operators
+
+const operators = {
+  add: "+",
+  sub: "-",
+  multiply: "*",
+  div: "/",
+};
 
 // can be changed for higher or lower accuracy
 
@@ -42,9 +49,9 @@ function executeAction(key, action) {
 
   // if the action is an operator, save the 'previous number' and clear the screen
 
-  if (operators.includes(action)) {
+  if (action in operators) {
     calculator.dataset.prev = screen.innerHTML;
-    calculator.dataset.operator = key.innerHTML;
+    calculator.dataset.operator = operators[action];
     screen.innerHTML = "";
   }
 
