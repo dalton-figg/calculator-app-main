@@ -1,19 +1,5 @@
 /* Reset */
 
-:root {
-  --clr-primary-300: hsl(222, 26%, 31%); /* Main background */
-  --clr-primary-200: hsl(223, 31%, 20%); /* Toggle and Keypad background */
-  --clr-primary-100: hsl(224, 36%, 15%); /* Screen background */
-  /* -- */
-  --clr-accent-500: hsl(221, 14%, 31%); /*Regular key color */
-  --clr-accent-600: hsl(224, 28%, 35%); /*Blue key shadow*/
-  --clr-accent-700: hsl(225, 21%, 49%); /* Blue key background */
-  --clr-accent-800: hsl(28, 16%, 65%); /* Regular key shadow */
-  --clr-accent-900: hsl(30, 25%, 89%); /* Regular key background */
-  --clr-accent-red: hsl(6, 63%, 50%); /* Red key background, toggle */
-  --clr-accent-red-darker: hsl(6, 70%, 34%); /*Red key shadow */
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,6 +10,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   font-family: "League Spartan", "Arial", system-ui, sans-serif;
+  color: white;
 }
 
 body {
@@ -31,7 +18,6 @@ body {
   place-items: center;
   height: 100vh;
   background: var(--clr-primary-300);
-  color: white;
 }
 
 img {
@@ -83,6 +69,17 @@ fieldset {
   margin: 0 auto;
 }
 
+.calculator__themes {
+  display: flex;
+  margin-left: auto;
+}
+
+.calculator__themes p {
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
 .calculator__theme-labels {
   display: flex;
   justify-content: space-evenly;
@@ -118,10 +115,56 @@ fieldset {
   background: var(--clr-accent-red);
 }
 
+:root:has(.calculator__theme:first-of-type:checked) {
+  --clr-primary-300: hsl(222, 26%, 31%); /* Main background */
+  --clr-primary-200: hsl(223, 31%, 20%); /* Toggle and Keypad background */
+  --clr-primary-100: hsl(224, 36%, 15%); /* Screen background */
+  /* -- */
+  --clr-accent-500: hsl(221, 14%, 31%); /*Regular key color */
+  --clr-accent-600: hsl(224, 28%, 35%); /*Blue key shadow*/
+  --clr-accent-700: hsl(225, 21%, 49%); /* Blue key background */
+  --clr-accent-800: hsl(28, 16%, 65%); /* Regular key shadow */
+  --clr-accent-900: hsl(30, 25%, 89%); /* Regular key background */
+  --clr-accent-red: hsl(6, 63%, 50%); /* Red key background, toggle */
+  --clr-accent-red-darker: hsl(6, 70%, 34%); /*Red key shadow */
+}
+
+:root:has(.calculator__theme:nth-of-type(2):checked) {
+  --clr-primary-300: hsl(0, 0%, 90%); /* Main background */
+  --clr-primary-200: hsl(0, 5%, 81%); /* Toggle and Keypad background */
+  --clr-primary-100: hsl(0, 0%, 93%); /* Screen background */
+  /* -- */
+  --clr-accent-500: hsl(60, 10%, 19%); /*Regular key color */
+  --clr-accent-600: hsl(185, 58%, 25%); /*Blue key shadow*/
+  --clr-accent-700: hsl(185, 42%, 37%); /* Blue key background */
+  --clr-accent-800: hsl(35, 11%, 61%); /* Regular key shadow */
+  --clr-accent-900: hsl(45, 7%, 89%); /* Regular key background */
+  --clr-accent-red: hsl(25, 98%, 40%); /* Red key background, toggle */
+  --clr-accent-red-darker: hsl(25, 99%, 27%); /*Red key shadow */
+  /* -- */
+
+  color: var(--clr-accent-500);
+}
+
+:root:has(.calculator__theme:last-of-type:checked) {
+  --clr-primary-300: hsl(268, 75%, 9%); /* Main background */
+  --clr-primary-200: hsl(268, 71%, 12%); /* Toggle and Keypad background */
+  --clr-primary-100: hsl(268, 71%, 12%); /* Screen background */
+  /* -- */
+  --clr-accent-500: hsl(52, 100%, 62%); /*Regular key color */
+  --clr-accent-600: hsl(290, 70%, 36%); /*Blue key shadow*/
+  --clr-accent-700: hsl(268, 47%, 21%); /* Blue key background */
+  --clr-accent-800: hsl(285, 91%, 52%); /* Regular key shadow */
+  --clr-accent-900: hsl(281, 89%, 26%); /* Regular key background */
+  --clr-accent-red: hsl(176, 100%, 44%); /* Red key background, toggle */
+  --clr-accent-red-darker: hsl(177, 92%, 70%); /*Red key shadow */
+  /* - */
+  color: var(--clr-accent-500);
+}
+
 .calculator__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .calculator__screen {

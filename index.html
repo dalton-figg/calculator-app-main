@@ -28,39 +28,42 @@
         <div class="calculator" id="calculator">
           <div class="calculator__header">
             <h1>calc</h1>
-            <form>
-              <fieldset class="calculator__theme-switcher">
-                <legend class="sr-only">Pick your theme</legend>
-                <div class="calculator__theme-labels">
-                  <label for="theme-1">1</label>
-                  <label for="theme-2">2</label>
-                  <label for="theme-3">3</label>
-                </div>
-                <div class="calculator__theme-options">
-                  <input
-                    type="radio"
-                    name="theme"
-                    id="theme-1"
-                    checked
-                    class="calculator__theme"
-                  />
+            <div class="calculator__themes">
+              <p>Theme</p>
+              <form>
+                <fieldset class="calculator__theme-switcher">
+                  <legend class="sr-only">Pick your theme</legend>
+                  <div class="calculator__theme-labels">
+                    <label for="theme-1">1</label>
+                    <label for="theme-2">2</label>
+                    <label for="theme-3">3</label>
+                  </div>
+                  <div class="calculator__theme-options">
+                    <input
+                      type="radio"
+                      name="theme"
+                      id="theme-1"
+                      checked
+                      class="calculator__theme"
+                    />
 
-                  <input
-                    type="radio"
-                    name="theme"
-                    id="theme-2"
-                    class="calculator__theme"
-                  />
+                    <input
+                      type="radio"
+                      name="theme"
+                      id="theme-2"
+                      class="calculator__theme"
+                    />
 
-                  <input
-                    type="radio"
-                    name="theme"
-                    id="theme-3"
-                    class="calculator__theme"
-                  />
-                </div>
-              </fieldset>
-            </form>
+                    <input
+                      type="radio"
+                      name="theme"
+                      id="theme-3"
+                      class="calculator__theme"
+                    />
+                  </div>
+                </fieldset>
+              </form>
+            </div>
           </div>
           <div class="calculator__screen" id="calculator-screen"></div>
           <div class="calculator__keys">
