@@ -36,31 +36,24 @@ function executeAction(key, action) {
     screen.innerHTML = "";
   }
 
+  if(action == 'pi'){
+    screen.innerHTML += Math.PI.toFixed(decimalAccuray);
+  }
+
+  if(action == 'e'){
+    screen.innerHTML += Math.E.toFixed(decimalAccuray);
+  }
+
   // grabs all the needed values and passes them out to be evaluated
 
   if (action == "calculate") {
     currentOperand = screen.innerHTML;
 
-    // ensure that any values with pi or e are parsed correctly
-
-    if (currentOperand.includes("π")) {
-      currentOperand = currentOperand.replace("π", "*3.14159265359");
-    }
-
-    if (currentOperand.includes("e")) {
-      currentOperand = currentOperand.replace("e", "*2.71828182846");
-    }
-
-    console.log(currentOperand);
-
-    calculate(currentOperand);
-
-    calculator.dataset.prev = "";
-    calculator.dataset.operator = "";
+    calculateNums(currentOperand);
   }
 }
 
 // evaluates the expression, rounds it to 3 decimal places and removes any trailing zeros from the result
 
-calculate = (currentOperand) =>
+calculateNums = (currentOperand) =>
   (screen.innerHTML = parseFloat(eval(currentOperand).toFixed(decimalAccuray)));
