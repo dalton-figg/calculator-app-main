@@ -22,23 +22,23 @@
 
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="grid center">
     <main>
       <section>
-        <div class="calculator" id="calculator">
-          <div class="calculator__header">
+        <div class="calculator | flex column m-0auto" id="calculator">
+          <div class="calculator__header | flex align-center">
             <h1>calc</h1>
-            <div class="calculator__themes">
+            <div class="calculator__themes | flex ml-auto">
               <p>Theme</p>
               <form>
                 <fieldset class="calculator__theme-switcher">
                   <legend class="sr-only">Pick your theme</legend>
-                  <div class="calculator__theme-labels">
+                  <div class="calculator__theme-labels | flex space-evenly">
                     <label for="theme-1">1</label>
                     <label for="theme-2">2</label>
                     <label for="theme-3">3</label>
                   </div>
-                  <div class="calculator__theme-options">
+                  <div class="calculator__theme-options | flex space-around">
                     <input
                       type="radio"
                       name="theme"
@@ -65,8 +65,8 @@
               </form>
             </div>
           </div>
-          <div class="calculator__screen" id="calculator-screen"></div>
-          <div class="calculator__keys">
+          <div class="calculator__screen | flex align-center" id="calculator-screen"></div>
+          <div class="calculator__keys | grid">
             <button class="calculator__key">7</button>
             <button class="calculator__key">8</button>
             <button class="calculator__key">9</button>

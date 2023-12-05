@@ -14,8 +14,6 @@ html {
 }
 
 body {
-  display: grid;
-  place-items: center;
   height: 100vh;
   background: var(--clr-main-bg);
 }
@@ -46,6 +44,43 @@ fieldset {
 }
 
 /* Utilities */
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.m-0auto {
+  margin: 0 auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
 
 .sr-only {
   position: absolute;
@@ -105,16 +140,8 @@ fieldset {
 /* Calculator Styles */
 
 .calculator {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
   max-width: 327px;
-  margin: 0 auto;
-}
-
-.calculator__themes {
-  display: flex;
-  margin-left: auto;
 }
 
 .calculator__themes p {
@@ -124,8 +151,6 @@ fieldset {
 }
 
 .calculator__theme-labels {
-  display: flex;
-  justify-content: space-evenly;
   margin-bottom: 0.5rem;
 }
 
@@ -134,8 +159,6 @@ fieldset {
 }
 
 .calculator__theme-options {
-  display: flex;
-  justify-content: space-around;
   max-width: 100%;
   width: 75px;
   background: var(--clr-keypad-bg);
@@ -158,26 +181,18 @@ fieldset {
   background: var(--clr-calc-key-bg);
 }
 
-.calculator__header {
-  display: flex;
-  align-items: center;
-}
-
 .calculator__screen {
-  display: flex;
-  align-items: center;
   justify-content: flex-end;
   height: 88px;
-  padding: 24px;
+  padding: 1.5rem;
   font-size: 40px;
   border-radius: 1rem;
   background: var(--clr-screen-bg);
 }
 
 .calculator__keys {
-  display: grid;
-  gap: 13px;
-  padding: 24px;
+  gap: 0.8125rem;
+  padding: 1.5rem;
   grid-template-columns: repeat(4, 60px);
   height: 420px;
   border-radius: 1rem;
@@ -211,16 +226,14 @@ fieldset {
   box-shadow: inset 0px -4px 0px var(--clr-action-key-shadow);
   background: var(--clr-action-key-bg);
   color: white;
-  font-size: 1.5rem;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .calculator__key--calc {
   box-shadow: inset 0px -4px 0px var(--clr-calc-key-shadow);
   background: var(--clr-calc-key-bg);
   color: white;
-  font-size: 1.5rem;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 @media only screen and (min-width: 640px) {
@@ -230,11 +243,11 @@ fieldset {
   .calculator__screen {
     height: 128px;
     padding: 2rem;
-    font-size: 56px;
+    font-size: 3.5rem;
   }
   .calculator__keys {
     grid-template-columns: repeat(4, 100px);
-    gap: 24px;
+    gap: 1.5rem;
     padding: 2rem;
     height: 480px;
   }
