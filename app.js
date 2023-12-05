@@ -4,7 +4,7 @@ const keys = document.querySelectorAll(".calculator__key");
 
 // can be changed for higher or lower accuracy
 
-const decimalAccuray = 3;
+const decimalAccuracy = 3;
 
 keys.forEach(function (key) {
   // adds a click event listener to every key
@@ -36,12 +36,26 @@ function executeAction(key, action) {
     screen.innerHTML = "";
   }
 
-  if(action == 'pi'){
-    screen.innerHTML += Math.PI.toFixed(decimalAccuray);
+  // not the ideal solution to this problem, I would much rather maintain the actual characters instead of immediately converting them
+
+  if (action == "pi") {
+    screen.innerHTML += Math.PI.toFixed(decimalAccuracy);
   }
 
-  if(action == 'e'){
-    screen.innerHTML += Math.E.toFixed(decimalAccuray);
+  if (action == "e") {
+    screen.innerHTML += Math.E.toFixed(decimalAccuracy);
+  }
+
+  if (action == "sqroot") {
+    currentOperand = eval(screen.innerHTML);
+
+    squareRoot(currentOperand);
+  }
+
+  if (action == "sqr") {
+    currentOperand = eval(screen.innerHTML);
+
+    square(currentOperand);
   }
 
   // grabs all the needed values and passes them out to be evaluated
@@ -56,4 +70,12 @@ function executeAction(key, action) {
 // evaluates the expression, rounds it to 3 decimal places and removes any trailing zeros from the result
 
 calculateNums = (currentOperand) =>
-  (screen.innerHTML = parseFloat(eval(currentOperand).toFixed(decimalAccuray)));
+  (screen.innerHTML = parseFloat(eval(currentOperand).toFixed(decimalAccuracy)));
+
+function squareRoot(currentOperand) {
+  screen.innerHTML = parseFloat(Math.sqrt(currentOperand).toFixed(decimalAccuracy));
+}
+
+function square(currentOperand){
+  screen.innerHTML = parseFloat(Math.pow(currentOperand, 2).toFixed(decimalAccuracy));
+}
