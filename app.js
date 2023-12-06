@@ -70,12 +70,16 @@ function executeAction(key, action) {
 // evaluates the expression, rounds it to 3 decimal places and removes any trailing zeros from the result
 
 calculateNums = (currentOperand) =>
-  (screen.innerHTML = parseFloat(eval(currentOperand).toFixed(decimalAccuracy)));
+  (screen.innerHTML = parseFloat(
+    eval(currentOperand).toFixed(decimalAccuracy)
+  ));
 
-function squareRoot(currentOperand) {
-  screen.innerHTML = parseFloat(Math.sqrt(currentOperand).toFixed(decimalAccuracy));
-}
+squareRoot = (currentOperand) =>
+  (screen.innerHTML = parseFloat(
+    Math.sqrt(currentOperand).toFixed(decimalAccuracy)
+  ));
 
-function square(currentOperand){
-  screen.innerHTML = parseFloat(Math.pow(currentOperand, 2).toFixed(decimalAccuracy));
-}
+square = (currentOperand) =>
+  (screen.innerHTML = parseFloat(
+    Math.pow(currentOperand, 2).toFixed(decimalAccuracy)
+  ));
